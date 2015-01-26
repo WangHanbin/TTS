@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 import sys
+# -*- coding: UTF-8 -*-
+
 import argparse
 import re
 import urllib, urllib2
@@ -81,12 +83,12 @@ def audio_extract(input_text='',args=None):
 
     #download chunks and write them to the output file
     for idx, val in enumerate(combined_text):
-        mp3url = "http://translate.google.com/translate_tts?tl=%s&q=%s&total=%s&idx=%s" % (
+        mp3url = "http://translate.google.cn/translate_tts?tl=%s&q=%s&total=%s&idx=%s" % (
             args.language,
             urllib.quote(val),
             len(combined_text),
             idx)
-        headers = {"Host": "translate.google.com",
+        headers = {"Host": "translate.google.cn",
                    "Referer": "http://www.gstatic.com/translate/sound_player2.swf",
                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) "
                                  "AppleWebKit/535.19 (KHTML, like Gecko) "
